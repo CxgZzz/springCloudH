@@ -1,0 +1,13 @@
+spring:
+  application:
+    #服务名称
+    name: provider
+server:
+  #端口号
+  port: 1113
+  ad
+eureka:
+  client:
+    service-url:
+      #注册地址
+      defaultZone: http://localhost:1111/eureka

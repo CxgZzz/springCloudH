@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: openfeign
+server:
+  port: 4000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
+
+logging:
+  level:
+    com:
+      cxg:
+        ##可以到包就行了
+        openfeign:
+          HelloService: debug
+
+##开启请求的数据压缩
+feign:
+  compression:
+    ##开启请求的数据压缩
+    request:
+      enabled: true
+      ##压缩数据类型
+      mime-types: text/html,application/json
+      ##压缩的数据下限，当要传输的数据大于此值是，才会进行数据压缩
+      min-request-size: 2048
+    ##开启回应的数据压缩
+    response:
+      enabled: true
+
+  hystrix:
+    enabled: true

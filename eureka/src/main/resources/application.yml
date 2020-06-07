@@ -1,0 +1,15 @@
+#当前服务起一个名字
+spring:
+  application:
+    name: eureka
+#端口
+server:
+  port: 1111
+
+#默认情况下，eureka也是一个微服务，防止自己注册,可做服务中心，可做客户端，客户端自动注册到服务中心
+eureka:
+  client:
+    #当前项目不要注册
+    register-with-eureka: false
+    #表示是否从eureka server注册中心
+    fetch-registry: false
